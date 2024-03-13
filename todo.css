@@ -1,0 +1,160 @@
+:root{
+    --background:#0d0f17;
+    --primary-color:#1b1b1f;
+    --secondary-color:#4A4D57;
+    --accent-color:#695ea7;
+    --text-color:#F9F9F9;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 16pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:var(--text-color);
+}
+
+body{
+    min-height: 100vh;
+    padding:10px;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+
+h1{
+    margin-top: 100px;
+    margin-bottom: 20px;
+    font-size: 3rem;
+font-weight: 800;
+text-transform: uppercase;
+text-align: center;
+color:var(--accent-color);
+}
+
+.wrapper{
+    width: 700px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+#todo-input{
+    box-sizing: border-box;
+    padding:12px 20px;
+    width: 100%;
+    background:none;
+    border: 2px solid var(--secondary-color);
+    font: inherit;
+    border-radius: 1000px;
+    color:var(--text-color);
+    caret-color: var(--accent-color);
+
+    &:focus{
+        outline:none;
+    }
+}
+form{
+    position: relative;
+}
+.add-btn{
+    position: absolute;
+    TOP:0;
+    right: 0;
+    background-color: var(--accent-color);
+    height: 100%;
+    padding: 0 30px;
+    border: none;
+    border-radius: 1000px;
+    cursor: pointer;
+    color:var(--background);
+    font-weight: 600;
+    font: inherit;
+}
+
+.todo{
+    margin-bottom: 10px;
+    padding: 0 16px;
+    background-color:var(--primary-color);
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.todo .todo-text{
+padding: 15px;
+padding-right: 0;
+flex-grow: 1;
+transition: 200ms ease;
+
+}
+
+.delete-button{
+    padding:3px;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+
+    & svg{
+        transition: 200ms ease;
+    }
+    &:hover svg{
+        fill:#ff0033;
+    }
+}
+
+.custom-checkbox{
+ border:2px solid var(--accent-color);
+ border-radius: 50%;
+ min-height: 20px;
+ min-width: 20px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-shrink: 0;   
+ transition: 200ms ease;
+ cursor: pointer;
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox{
+    background-color: var(--accent-color);
+  & svg{
+    fill:var(--primary-color);
+  }
+}
+
+input[type="checkbox"]:checked ~ .todo-text{
+    text-decoration: line-through;
+color:var(--secondary-color);
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+@media(max-width: 740px){
+   html{
+    font-size: 12pt;
+   }
+   .add-btn{
+    position: unset;
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    font-weight: 600;
+    height: auto;
+   }
+   h1{
+    margin-top: 50px;
+    font-size: 15vh;
+   }
+}
