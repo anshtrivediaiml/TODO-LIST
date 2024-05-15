@@ -19,7 +19,8 @@ html{
 body{
     min-height: 100vh;
     padding:10px;
-    background-color: var(--background);
+    background: linear-gradient(to top right,#0c132c,#430a4c);
+    box-shadow: rgba(18, 14, 14, 0.903) 0px 5px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,14 +75,20 @@ form{
     border-radius: 1000px;
     cursor: pointer;
     color:var(--background);
-    font-weight: 600;
-    font: inherit;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    transition:all 300ms ease-in-out;
+    &:hover{
+        opacity: 0.7;
+    }
 }
 
 .todo{
     margin-bottom: 10px;
     padding: 0 16px;
-    background-color:var(--primary-color);
+    box-shadow: 0 0 10px 0 0 10px 10 2 10px 12 34 10px  rgba(0, 0, 0, 0.2);
+    background-color:rgba(50, 65, 132, 0.2);
     display: flex;
     align-items: center;
     border-radius: 15px;
